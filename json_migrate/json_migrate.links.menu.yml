@@ -1,0 +1,10 @@
+entity.json_migrate.settings:
+  title: Json Migrate
+  description: Configure a Json Migrate entity type
+  route_name:  entity.json_migrate.settings
+  parent: system.admin_structure
+entity.json_migrate.collection:
+  title: Json Migrates
+  description: List of json migrates
+  route_name: entity.json_migrate.collection
+  parent: system.admin_content

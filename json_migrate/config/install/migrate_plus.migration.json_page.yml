@@ -1,0 +1,67 @@
+id: json_page 
+label: JSON Page Migration 
+Group: json_example 
+# source: 
+#   plugin: json_page 
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  url: http://d9learning.sf/data/cities.json
+  fields:
+    -
+      name: _id
+      label: 'ID'
+      selector: _id
+    -
+      name: city
+      label: 'City'
+      selector: city
+    -
+      name: latitude
+      label: 'Latitude'
+      selector: loc/0
+    -
+      name: Longitude
+      label: 'Longitude'
+      selector: loc/1  
+    -
+      name: pop
+      label: 'Pop'
+      selector: pop
+    -
+      name: state
+      label: 'State'
+      selector: state                  
+  
+  ids:
+      city:
+        type: string
+
+destination:
+  plugin: entity:json_migrate_entity
+
+process:
+  type:
+    plugin: default_value
+    default_value: Json
+
+  _id: _id
+  city: city
+  longitude: longitude
+  latitude: latitude
+  pop: pop
+  state: state
+
+  sticky:
+    plugin: default_value
+    default_value: 0
+  uid:
+    plugin: default_value
+    default_value: 0
+
+# use forced module dependency so uninstall/reinstall works properly 
+dependencies: 
+  enforced: 
+    module: 
+      - json_migrate 

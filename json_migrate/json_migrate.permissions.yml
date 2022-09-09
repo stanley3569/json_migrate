@@ -1,0 +1,5 @@
+administer json migrate:
+  title: 'Administer json migrate settings'
+  restrict access: true
+access json migrate overview:
+  title: 'Access json migrate overview page'

@@ -1,0 +1,22 @@
+entity.json_migrate.settings:
+  title: Settings
+  route_name: entity.json_migrate.settings
+  base_route: entity.json_migrate.settings
+entity.json_migrate.view:
+  title: View
+  route_name: entity.json_migrate.canonical
+  base_route: entity.json_migrate.canonical
+entity.json_migrate.edit_form:
+  title: Edit
+  route_name: entity.json_migrate.edit_form
+  base_route: entity.json_migrate.canonical
+entity.json_migrate.delete_form:
+  title: Delete
+  route_name: entity.json_migrate.delete_form
+  base_route: entity.json_migrate.canonical
+  weight: 10
+entity.json_migrate.collection:
+  title: Json Migrate
+  route_name: entity.json_migrate.collection
+  base_route: system.admin_content
+  weight: 10

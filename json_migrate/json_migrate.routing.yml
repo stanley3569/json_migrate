@@ -1,0 +1,7 @@
+entity.json_migrate.settings:
+  path: 'admin/structure/json-migrate'
+  defaults:
+    _form: '\Drupal\json_migrate\Form\JsonMigrateSettingsForm'
+    _title: 'Json Migrate'
+  requirements:
+    _permission: 'administer json migrate'
