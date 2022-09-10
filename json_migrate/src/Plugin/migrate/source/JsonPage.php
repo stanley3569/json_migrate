@@ -13,7 +13,7 @@ class JsonPage extends SourcePluginBase {
  
   public function prepareRow(Row $row) { 
     $title = $row->getSourceProperty('title');  
-    // make sure the title isn't too long for Drupal 
+ 
     if (strlen($title) > 255) { 
       $row->setSourceProperty('title', substr($title,0,255)); 
     }  
@@ -31,11 +31,13 @@ class JsonPage extends SourcePluginBase {
  
   public function fields() { 
     return array( 
-      'url' => $this->t('URL'), 
-      'title' => $this->t('Title'), 
-      'body' => $this->t('Body'), 
-      'date' => $this->t('Date Published'), 
-      'json_filename' => $this-t{"Source JSON filename") 
+      'title' => $this->t('city'),
+      'id' => $this->t('_id'),
+      'longitude' => $this->t('longitude'), 
+      'latitude' => $this->t('latitude'), 
+      'pop' => $this->t('pop'), 
+      'state' => $this->t('state'),
+      'json_filename' => $this->t("Source JSON filename")
     ); 
   } 
  
@@ -51,18 +53,24 @@ class JsonPage extends SourcePluginBase {
   protected function initializeIterator() { 
  
     // loop through the source files and find anything with a .json extension 
-    $path = dirname(DRUPAL_ROOT) . "/source-data/cities.json"; 
-    $filenames = glob($path); 
+    $path = dirname(DRUPAL_ROOT) . "/data/cities.json";
+    // $module_handler = \Drupal::service('module_handler');
+    // $module_path = $module_handler->getModule('json_migrate')->getPath();
+    // $path = $module_path . "/cities.json"; 
+    // $filenames = glob($path);
+    $filename = $path;
+    var_dump($path);
     $rows = []; 
-    foreach ($filenames as $filename) { 
+    // foreach ($filenames as $filename) { 
       // using second argument of TRUE here because migrate needs the data to be 
       // associative arrays and not stdClass objects. 
       $row = json_decode(file_get_contents($filename), true); // sets the title, body, etc. 
-      $row['json_filename'] = $filename;
- 
-    } 
+      // $row['json_filename'] = $filename;
+
+// var_dump($row);
+    // } 
  
     // Migrate needs an Iterator class, not just an array
-    return new \ArrayIterator($rows); 
+    return new \ArrayIterator($row); 
   } 
 } 
