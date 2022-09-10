@@ -91,7 +91,7 @@ class JsonMigrateListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildRow(EntityInterface $entity) {
-    /* @var $entity \Drupal\json_migrate\JsonMigrateInterface */
+    /** @var \Drupal\json_migrate\JsonMigrateInterface $entity */
     $row['id'] = $entity->id();
     $row['title'] = $entity->toLink();
     $row['status'] = $entity->isEnabled() ? $this->t('Enabled') : $this->t('Disabled');

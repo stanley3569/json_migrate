@@ -161,7 +161,7 @@ class JsonMigrate extends ContentEntityBase implements JsonMigrateInterface {
       ])
       ->setDisplayConfigurable('view', TRUE);
 
-      $fields['_id'] = BaseFieldDefinition::create('string')
+    $fields['_id'] = BaseFieldDefinition::create('string')
       ->setLabel(t('ID'))
       ->setDescription(t('The ID of the Json file data.'))
       ->setSettings([
@@ -182,7 +182,7 @@ class JsonMigrate extends ContentEntityBase implements JsonMigrateInterface {
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
-      $fields['city'] = BaseFieldDefinition::create('string')
+    $fields['city'] = BaseFieldDefinition::create('string')
       ->setLabel(t('City'))
       ->setDescription(t('The City of the Json file data.'))
       ->setSettings([
@@ -201,9 +201,9 @@ class JsonMigrate extends ContentEntityBase implements JsonMigrateInterface {
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
-      ->setRequired(TRUE);    
+      ->setRequired(TRUE);
 
-      $fields['latitude'] = BaseFieldDefinition::create('string')
+    $fields['latitude'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Latitude'))
       ->setDescription(t('The latitude of the Json file.'))
       ->setSettings([
@@ -222,9 +222,9 @@ class JsonMigrate extends ContentEntityBase implements JsonMigrateInterface {
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
-      ->setRequired(TRUE); 
+      ->setRequired(TRUE);
 
-      $fields['longitude'] = BaseFieldDefinition::create('string')
+    $fields['longitude'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Longitude'))
       ->setDescription(t('The longitude of the Json file.'))
       ->setSettings([
@@ -243,9 +243,9 @@ class JsonMigrate extends ContentEntityBase implements JsonMigrateInterface {
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
-      ->setRequired(TRUE);          
+      ->setRequired(TRUE);
 
-      $fields['pop'] = BaseFieldDefinition::create('string')
+    $fields['pop'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Post Office Protocol'))
       ->setDescription(t('The Post Office Protocol of the Json file.'))
       ->setSettings([
@@ -266,7 +266,7 @@ class JsonMigrate extends ContentEntityBase implements JsonMigrateInterface {
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
 
-      $fields['state'] = BaseFieldDefinition::create('string')
+    $fields['state'] = BaseFieldDefinition::create('string')
       ->setLabel(t('State'))
       ->setDescription(t('The State of the Json migrate entity entity.'))
       ->setSettings([
@@ -286,8 +286,6 @@ class JsonMigrate extends ContentEntityBase implements JsonMigrateInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
-
-
 
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Status'))

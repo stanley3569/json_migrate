@@ -1,8 +1,9 @@
-id: json_page 
-label: JSON Page Migration 
-Group: json_example 
-source: 
-  plugin: json_page 
+id: json_page
+label: JSON Page Migration
+group: json_example
+source:
+  plugin: json_source
+  path: http://d9learning.sf/data/cities.json
 # source:
 #   plugin: url
 #   data_fetcher_plugin: http
@@ -24,7 +25,7 @@ source:
     -
       name: Longitude
       label: 'Longitude'
-      selector: loc/1  
+      selector: loc/1
     -
       name: pop
       label: 'Pop'
@@ -34,9 +35,15 @@ source:
       label: 'State'
       selector: state                  
   
+  # ids:
+  #   id:
+  #     type: integer
+  # ids:
+  #     nid:
+  #       type: integer
+
 destination: 
-  plugin: entity:node 
-  bundle: custom_entity
+  plugin: entity:json_migrate
 
 process:
   type:
@@ -49,11 +56,12 @@ process:
   pop: pop
   state: state
 
-# created: date 
-#   changed: date
-  # uid:
-  #   plugin: default_value
-  #   default_value: 1
+  sticky:
+    plugin: default_value
+    default_value: 0
+  uid:
+    plugin: default_value
+    default_value: 0
 
 # use forced module dependency so uninstall/reinstall works properly 
 dependencies: 
